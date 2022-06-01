@@ -4,7 +4,6 @@ from collections import OrderedDict
 from fusioncharts import FusionCharts
 import commonFunctions
 import logging
-# 579b464db66ec23bdd000001c8e6c9d6daf34e65556dabe447fd0c35
 
 urlLiteracy = "https://api.data.gov.in/resource/f7d34594-f40d-42a3-990e-fd9a5fe2b7f5?api-key=<< place api key here >>&format=json&offset=0&limit=100"
 #http://www.jsonmate.com/permalink/5cd5708f85da04b10bcf81b7
