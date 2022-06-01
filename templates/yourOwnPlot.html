@@ -1,0 +1,54 @@
+{% extends 'header.html' %}
+{% block content %}
+
+<body style="text-align:center;">
+    <h1 style="color:#4c2a68;">
+            Get an API of data from <a href="https://data.gov.in" target="_blank">data.gov.in</a> and place below
+        </h1>
+
+    <h2>
+      Get the link in json format...
+  </h2>
+
+    <p>
+      Place the link in the text
+      field, and then click the SUBMIT button below.
+  </p>
+
+
+    <form action="{% url 'ownPlot' %}" method="post">
+        {% csrf_token %}
+        Link
+        <input class="form-control" type="url" name = "handle"
+           id="myText"
+           value="">
+        <button type="submit"
+            onclick="myFunction()">
+            SUBMIT
+        </button>
+    </form>
+    <!--<div class="row">
+        <div class="columnFullWidth">
+            <div class="container">
+                <div class="content">
+
+                        <div class="divForCharts" id="yourOwnPlotGraph">{{ outputYourOwnPlotGraph|safe }}</div>
+
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <div class="row">
+        <div class="columnFullWidth">
+            <div class="container">
+                <div class="content">
+
+                        <div class="divForCharts123" id="yourOwnPlotGraph">{{ outputYourOwnPlotGraph|safe }}</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

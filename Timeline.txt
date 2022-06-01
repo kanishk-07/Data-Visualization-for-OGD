@@ -1,0 +1,4 @@
+Timeline:
+
+**********11th April 2019************
+Made a file commonFunctions.py and added functions: downloadData(serviceUrl), loadJson(rawData) and makeDataSourceForChloroplethMap(mapDataArray).

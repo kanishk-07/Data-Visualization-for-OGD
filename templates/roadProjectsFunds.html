@@ -1,0 +1,60 @@
+{% extends 'header.html' %}
+{% block content %}
+  <body>
+    <div>
+        <h1 style="text-align: center">Road Projects and Funds Released for the States</h1>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openTabForSelection(event, 'y2017_18')" id="defaultOpen">Funds acquired in 2017-2018</button>
+                        <button class="tablinks" onclick="openTabForSelection(event, 'y2018_19')">Funds acquired in 2018-2019</button>
+                        <!--<button class="tablinks" onclick="openTabForSelection(event, 'roadLength')">Lane wise Length of National Highways</button>-->
+                    </div>
+
+                    <div id="y2017_18" class="tabcontent">
+                        <div class="divForCharts" id="fundsChloropleth2017_18">{{ output2017_2018|safe }}
+                            {% load static %}
+                                <script src="{% static "fc_js/fusioncharts.maps.js" %}"></script>
+                                <script src="{% static "fc_js/maps/fusioncharts.india.js" %}"></script>
+                        </div>
+                    </div>
+
+                    <div id="y2018_19" class="tabcontent">
+                        <div class="divForCharts" id="fundsChloropleth2018_19">{{ output2018_2019|safe }}
+                            {% load static %}
+                                <script src="{% static "fc_js/fusioncharts.maps.js" %}"></script>
+                                <script src="{% static "fc_js/maps/fusioncharts.india.js" %}"></script>
+                        </div>
+                    </div>
+                    {% load static %}
+                        <script src="{% static "scriptForTabs.js" %}"></script>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openTabForSelection1(event, 'popDensity')" id="defaultOpen1">Density and Projects</button>
+                        <button class="tablinks" onclick="openTabForSelection1(event, 'barChartProjects')">Population and Projects</button>
+                    </div>
+
+                    <div id="popDensity" class="tabcontent1">
+                        <div class="divForCharts" id="populationDensityProjects">{{ outputPopulationDensityProjects|safe }}</div>
+                    </div>
+
+                    <div id="barChartProjects" class="tabcontent1">
+                        <div class="divForCharts" id="barChartForProjects">{{ projects|safe }}</div>
+                    </div>
+                    {% load static %}
+                        <script src="{% static "scriptForTabs1.js" %}"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+{% endblock %}

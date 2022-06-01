@@ -1,0 +1,160 @@
+{% extends "header.html" %}
+{% block content %}
+<body>
+    <div>
+        <div class="container">
+            <h1 style="text-align: center">Data Visualisation</h1>
+            {% load static %}
+                <img src="{% static 'images/infoButton.png' %}" class="infoImage" id="myBtn" width="30" height="30" alt=""><!--style="width:100%">-->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p style="align-content: end">This website uses open government data to help understand it more effectively using interactive visualisations</p>
+                    {% load static %}
+                        <script src="{% static "openModals.js" %}"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column1" style="background-color:white;"></div>
+        <div class="column2">
+            <div class="containerImage">
+                <div class="content">
+                    <a class="nav-link" href="{% url 'budgetAllocationPolice' %}">
+                        {% load static %}
+                            <img src="{% static 'images/photo2.jpg' %}" width="160" height="225" alt="" style="width:100%">
+                        <caption>Budget Allocation For Modernisation Of Police 2017-2018</caption>
+                        <div class="middle">
+                            <div class="text">Budget Allocation For Modernisation Of Police 2017-2018</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="column3" style="background-color:white;"></div>
+        <div class="column2">
+            <div class="containerImage">
+                <div class="content">
+                    <a class="nav-link" href="{% url 'roadProjectsFunds' %}">
+                        {% load static %}
+                            <img src="{% static 'images/photo1.jpg' %}" width="160" height="225" alt="" style="width:100%">
+                        <caption>Road Projects and Funds Released for the States</caption>
+                        <div class="middle">
+                            <div class="text">Road Projects and Funds Released for the States</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="column4" style="background-color:white;"></div>
+    </div>
+
+    <div class="row">
+        <div class="column1" style="background-color:white;"></div>
+        <div class="column2">
+            <div class="containerImage">
+                <div class="content">
+                    <a class="nav-link" href="{% url 'literacyRatesStates' %}">
+                        {% load static %}
+                            <img src="{% static 'images/literacy.jpg' %}" width="160" height="225" alt="" style="width:100%">
+                        <caption>Literacy Rates of States</caption>
+                        <div class="middle">
+                            <div class="text">Literacy Rates of States by census 2011</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="column3" style="background-color:white;"></div>
+        <div class="column2">
+            <div class="containerImage">
+                <div class="content">
+                    <a class="nav-link" href="{% url 'crimeandliteracy' %}">
+                        {% load static %}
+                            <img src="{% static 'images/crimeandliteracy.jpg' %}" width="160" height="225" alt="" style="width:100%">
+                        <caption>Crime and Literacy Rates of States</caption>
+                        <div class="middle">
+                            <div class="text">Crime and Literacy Rates of States</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="column4" style="background-color:white;"></div>
+    </div>
+ <div class="row">
+        <div class="column1" style="background-color:white;"></div>
+        <div class="column2">
+            <div class="containerImage">
+                <div class="content">
+                    <a class="nav-link" href="{% url 'UnemploymentandEconomicOutput' %}">
+                        {% load static %}
+                            <img src="{% static 'images/Unemployment.jpg' %}" width="160" height="225" alt="" style="width:100%">
+                        <caption>Unemployment Rate and Economic Output of state</caption>
+                        <div class="middle">
+                            <div class="text">Unemployment Rate and Economic Output of state</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="column3" style="background-color:white;"></div>
+        <div class="column2">
+            <div class="containerImage">
+                <div class="content">
+                    <a class="nav-link" href="{% url 'AgricultureSectorInGDP' %}">
+                        {% load static %}
+                            <img src="{% static 'images/AgricultureSector.jpg' %}" width="160" height="225" alt="" style="width:100%">
+                        <caption>Contribution by Agriculture Sector In GDP</caption>
+                        <div class="middle">
+                            <div class="text">Contribution by Agriculture Sector In GDP</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div> -->
+        <div class="column4" style="background-color:white;"></div>
+    </div>
+<div class="row">
+        <div class="column1" style="background-color:white;"></div>
+        <div class="column2">
+            <div class="containerImage">
+                <div class="content">
+                    <a class="nav-link" href="{% url 'PollutionAndVehicles' %}">
+                        {% load static %}
+                            <img src="{% static 'images/pollution.jpg' %}" width="160" height="225" alt="" style="width:100%">
+                        <caption>Pollution through Vehicles</caption>
+                        <div class="middle">
+                            <div class="text">Pollution through Vehicles</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+       <div class="column3" style="background-color:white;"></div>
+        <div class="column2">
+            <div class="containerImage">
+                <div class="content">
+                    <a class="nav-link" href="{% url 'WaterBornDisease' %}">
+                        {% load static %}
+                            <img src="{% static 'images/water.jpg' %}" width="160" height="225" alt="" style="width:100%">
+                        <caption>Water Borne Disease</caption>
+                        <div class="middle">
+                            <div class="text">Water Borne Disease</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="column4" style="background-color:white;"></div>
+    </div>
+
+    <div class="row">
+        <a href="{% url 'yourOwnPlot' %}" target="_blank">Plot your own data using data.gov.in API</a>
+    </div>
+
+
+</body>
+{% endblock %}

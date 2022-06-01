@@ -1,0 +1,88 @@
+{% extends 'header.html' %}
+{% block content %}
+  <body>
+    <div>
+        <h1 style="text-align: center">Pollution level and Number of Vehicles registered</h1>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <div class="divForCharts" id="VehiclesMap">{{ outputVehicles|safe }}
+                        {% load static %}
+                            <script src="{% static "fc_js/fusioncharts.maps.js" %}"></script>
+                            <script src="{% static "fc_js/maps/fusioncharts.india.js" %}"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <div class="divForCharts" id="PollutionGraph">{{ outputPollution|safe }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="collapsible">A Word To The Viewers</button>
+    <div class="contentCollapsible">
+        <p>Concentration Of NO2 increases due to the burning of fuels through cars,buses etc. and
+from the Plots we have concurred the same that State with the most number of vehicles has the
+highest concentration of NO2 in the atmosphere and hence gets more polluted state.</p>
+    </div>
+    {% load static %}
+        <script src="{% static "scriptForCollapsible.js"%}"></script>
+
+    <!--<div class="row">
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <h4><u>Predicted Rank of Health Indexes</u></h4>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+                                { % for i in range{10} %}
+                                    <h4>{ { listSortedPredicted[i] }}</h4>
+                                { % endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <div class="content">
+
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+  </body>
+{% endblock %}

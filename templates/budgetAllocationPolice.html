@@ -1,0 +1,30 @@
+{% extends 'header.html' %}
+{% block content %}
+  <body>
+    <div>
+        <h1 style="text-align: center">Budget Allocation For Modernisation Of Police 2017-18</h1>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <div class="divForCharts" id="myFirstchart-container">{{ output|safe }}
+                        {% load static %}
+                            <script src="{% static "fc_js/fusioncharts.maps.js" %}"></script>
+                            <script src="{% static "fc_js/maps/fusioncharts.india.js" %}"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <div class="divForCharts" id="myBarChart-container">{{ output1|safe }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </body>
+{% endblock %}

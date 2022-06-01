@@ -1,0 +1,93 @@
+{% extends 'header.html' %}
+{% block content %}
+  <body>
+    <div>
+        <h1 style="text-align: center">Water Borne Disease</h1>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <div class="divForCharts" id="AllocatedBudgetMap">{{ outputAllocatedBudget|safe }}
+                        {% load static %}
+                            <script src="{% static "fc_js/fusioncharts.maps.js" %}"></script>
+                            <script src="{% static "fc_js/maps/fusioncharts.india.js" %}"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <div class="divForCharts" id="CasesGraph">{{ outputCases|safe }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="collapsible">Cases Registered for Diarrhoea</button>
+    <div class="contentCollapsible">
+        <p align="center">Cases Registered = Number of Cases Reported / 1000</p>
+    </div>
+
+    <button class="collapsible">A Word To The Viewers</button>
+    <div class="contentCollapsible">
+        <p>From the following Plots we came to know that poor drinking water is the main reason for
+Diarrhoea and the states who receive less budget have poor drinking water and the people are
+more prone to such water borne diseases.</p>
+    </div>
+    {% load static %}
+        <script src="{% static "scriptForCollapsible.js"%}"></script>
+
+    <!--<div class="row">
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <h4><u>Predicted Rank of Health Indexes</u></h4>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+                                { % for i in range{10} %}
+                                    <h4>{ { listSortedPredicted[i] }}</h4>
+                                { % endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <div class="content">
+
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+  </body>
+{% endblock %}

@@ -1,0 +1,332 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Data Visualisation</title>
+	<meta charset="utf-8" />
+    {% load static %}
+      <script src="{% static "fc_js/fusioncharts.js" %}"></script>
+      <script src="{% static "fc_js/themes/fusioncharts.theme.fusion.js" %}"></script>
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 2px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 5px 5px;
+  text-decoration: none;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.infoImage {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  /*margin: 8px -16px;*/
+    margin-bottom: 80px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+}
+
+.columnFullWidth {
+  float: left;
+  width: 100%;
+}
+
+.column1 {
+  float: left;
+  width: 12.495%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #ffffff;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  height: 150px; /* Should be removed. Only for demonstration */
+}
+.column2 {
+  float: left;
+  width: 33.33%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 225px; /* Should be removed. Only for demonstration */
+}
+.column3 {
+  float: left;
+  width: 8.33%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  background-color: #ffffff;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  padding-right: 10px;
+  height: 150px; /* Should be removed. Only for demonstration */
+}.column4 {
+  float: left;
+  width: 12.495%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  background-color: #ffffff;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  padding-right: 10px;
+  height: 150px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+.text {
+    background-color: #646366;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.image {
+  opacity: 1;
+  display: block;
+  width: auto;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.containerImage {
+  align-self: center;
+  position: absolute;
+  padding-right: 10px;
+  width: 33.33%;
+  height: 225px;
+}
+
+.containerImage:hover .middle {
+  opacity: 1;
+}
+.column2:hover .image {
+  opacity: 0.3;
+}
+.column2:hover .middle {
+  opacity: 1;
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.divForCharts {
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.divForCharts123 {
+    overflow-x: scroll;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #eee;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+    width: 50%;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.tabcontent1 {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/*For Modals*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navigationBarImage {
+    padding-right: 5px;
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-bottom: 2px;
+}
+
+.collapsible {
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 97.5%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.contentCollapsible {
+    padding:0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+    margin-left: 18px;
+    margin-right: 16px;
+    margin-bottom: 80px;
+}
+
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+@media screen and (max-width: 1300px) {
+  .column {
+    width: 100%;
+    position: center;
+  }
+}
+
+</style>
+</head>
+
+<body class="body" >
+    <div class="container">
+        <nav class="navbar default" style="background-color: #4c2a68">
+            <a class="navlink" href="{% url 'indexHome' %}">
+                <img src="{% static 'images/logo.png' %}" width="100" height="85" class="navigationBarImage" alt="">
+            </a>
+        </nav>
+    </div>
+</body>
+{% block content %}
+{% endblock %}
+
+</html>

@@ -1,0 +1,97 @@
+{% extends 'header.html' %}
+{% block content %}
+  <body>
+    <div>
+        <h1 style="text-align: center">Crime Rate and Literacy of a state</h1>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <div class="divForCharts" id="crimeRateMap">{{ outputCrimeRate|safe }}
+                        {% load static %}
+                            <script src="{% static "fc_js/fusioncharts.maps.js" %}"></script>
+                            <script src="{% static "fc_js/maps/fusioncharts.india.js" %}"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <div class="divForCharts" id="literacyRateGraph">{{ outputLiteracy|safe }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="collapsible">Crime Rate Calculation</button>
+    <div class="contentCollapsible">
+        <p align="center">Crime Rate = Number of Cases(Total Cases under IPC ans SLL) Reported / Population in Lakhs</p>
+    </div>
+
+    <button class="collapsible">A Word To The Viewers</button>
+    <div class="contentCollapsible">
+        <p>Various researches such as <a href="https://eml.berkeley.edu/~moretti/lm46.pdf" target="_blank">research</a>
+            done in University of California, Berkeley, suggests that there are many theoritical reason to suggest that increasing
+            literacy reduces crime rate. For example, educated people largely have a source of income and education may also make
+            individuals less impatient or more risk averse, further reducing the propensity to commit crimes. This general understanding
+            does not inline with case of Kerala. Kerala has highest crime rate even though it has the highest literacy rate.
+            <a href="https://ijrar.com/upload_issue/ijrar_issue_20543147.pdf" target="_blank">This research paper</a> tries to explain
+            the case of Kerala</p>
+    </div>
+    {% load static %}
+        <script src="{% static "scriptForCollapsible.js"%}"></script>
+
+    <!--<div class="row">
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <h4><u>Predicted Rank of Health Indexes</u></h4>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+                                { % for i in range{10} %}
+                                    <h4>{ { listSortedPredicted[i] }}</h4>
+                                { % endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <div class="content">
+
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+  </body>
+{% endblock %}

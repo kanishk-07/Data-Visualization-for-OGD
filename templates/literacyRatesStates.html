@@ -1,0 +1,130 @@
+{% extends 'header.html' %}
+{% block content %}
+  <body>
+    <div>
+        <h1 style="text-align: center">Literacy Rates of States by Census Data</h1>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="container">
+                <div class="content">
+
+                    <div class="tab">
+                        <button class="tablinks" onclick="openTabForSelection(event, 'y2011')" id="defaultOpen">Literacy Rate in 2011</button>
+                        <button class="tablinks" onclick="openTabForSelection(event, 'y2001')">Literacy Rate in 2001</button>
+                        <!--<button class="tablinks" onclick="openTabForSelection(event, 'roadLength')">Lane wise Length of National Highways</button>-->
+                    </div>
+
+                    <div id="y2011" class="tabcontent">
+                        <div class="divForCharts" id="literacyChloropleth2011">{{ outputliteracyChloropleth2011|safe }}
+                            {% load static %}
+                                <script src="{% static "fc_js/fusioncharts.maps.js" %}"></script>
+                                <script src="{% static "fc_js/maps/fusioncharts.india.js" %}"></script>
+                        </div>
+                    </div>
+                    <div id="y2001" class="tabcontent">
+                        <div class="divForCharts" id="literacyChloropleth2001">{{ outputliteracyChloropleth2001|safe }}
+                            {% load static %}
+                                <script src="{% static "fc_js/fusioncharts.maps.js" %}"></script>
+                                <script src="{% static "fc_js/maps/fusioncharts.india.js" %}"></script>
+                        </div>
+                    </div>
+                    {% load static %}
+                        <script src="{% static "scriptForTabs.js" %}"></script>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openTabForSelection1(event, 'literacyIn2011')" id="defaultOpen1">Literacy in 2011</button>
+                        <button class="tablinks" onclick="openTabForSelection1(event, 'increaseInLiteracy')">Increase in Literacy</button>
+                    </div>
+                    <div id="literacyIn2011" class="tabcontent1">
+                        <div class="divForCharts" id="literacyGraph2011">{{ outputliteracyGraph2011|safe }}</div>
+                    </div>
+                    <div id="increaseInLiteracy" class="tabcontent1">
+                        <div class="divForCharts" id="literacyGraph">{{ outputliteracyGraph|safe }}</div>
+                    </div>
+                    {% load static %}
+                        <script src="{% static "scriptForTabs1.js" %}"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="collapsible">A Word To The Viewers</button>
+    <div class="contentCollapsible">
+        <p>Various researches such as <a href="https://www.annualreviews.org/doi/pdf/10.1146/annurev.pu.10.050189.001433" target="_blank">research</a>
+            done in Uniersity of Michigan, suggest that there is a relationship between literacy rates and health of a society. Regions with lower literacy rates have been
+            found with poor health indexes. Below is a prediction of ranks of states in health indexes, based on their literacy rates.</p>
+    </div>
+    {% load static %}
+        <script src="{% static "scriptForCollapsible.js"%}"></script>
+
+    <div class="row">
+        <div class="columnFullWidth">
+            <div class="container">
+                <div class="content">
+
+                    <div class="divForCharts" id="literacyGraph2011Sorted">{{ outputliteracyGraph2011Sorted|safe }}</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="row">
+        <div class="column">
+            <div class="container">
+                <div class="content">
+                    <h4><u>Predicted Rank of Health Indexes</u></h4>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+                                { % for i in range{10} %}
+                                    <h4>{ { listSortedPredicted[i] }}</h4>
+                                { % endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <div class="content">
+
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="container">
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+  </body>
+{% endblock %}
