@@ -2,7 +2,7 @@ from django.shortcuts import render
 from collections import OrderedDict
 from fusioncharts import FusionCharts
 import commonFunctions
-# 579b464db66ec23bdd000001c8e6c9d6daf34e65556dabe447fd0c35
+
 urlFunds = "https://api.data.gov.in/resource/8d215449-5b85-4bb9-bda4-b637becd5de3?api-key=<< place api key here >>&format=json&offset=0&limit=100"
 urlProjects = "https://api.data.gov.in/resource/f17274ef-4bf3-4390-88ad-4bf80a4d6bd0?api-key=<< place api key here >>&format=json&offset=0&limit=100"
 urlLaneWiseLenNH = "https://api.data.gov.in/resource/54864dd4-9e8d-4935-a6fe-aed8c86287b1?api-key=<< place api key here >>&format=json&offset=0&limit=100"
