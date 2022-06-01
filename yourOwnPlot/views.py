@@ -9,8 +9,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# https://api.data.gov.in/resource/4256d3dd-5e4a-4e0b-9d35-17fd1bdc83f7?api-key=579b464db66ec23bdd000001c8e6c9d6daf34e65556dabe447fd0c35&format=json&offset=0&limit=100
-# 579b464db66ec23bdd000001c8e6c9d6daf34e65556dabe447fd0c35
+# https://api.data.gov.in/resource/4256d3dd-5e4a-4e0b-9d35-17fd1bdc83f7?api-key=<< place api key here >>&format=json&offset=0&limit=100
 def yourOwnPlot(request):
     if request.method == "POST":
         str1 = request.POST.get('handle')
