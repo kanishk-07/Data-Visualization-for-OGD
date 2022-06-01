@@ -3,44 +3,44 @@ from collections import OrderedDict
 from fusioncharts import FusionCharts
 import commonFunctions
 
-serviceUrl = ''
+serviceUrl = 'https://api.data.gov.in/resource/98c9f5dc-05ea-4f67-8fc3-fb8c0398a865?api-key=<< place api key here >>&format=json'
 
 def AgricultureSectorInGDP(request):
-    #rawData = commonFunctions.downloadData(serviceUrl)
-    #js = commonFunctions.loadJson(rawData)
-    #data = js['records']
-    js = {"records": [
-        {"states_uts": "Andaman & Nicobar Islands", "AgricultureSector": "7.9731", "GDP": "60.32", "projects": "16"},
-        {"states_uts": "Andhra Pradesh", "AgricultureSector": "1353.9974", "GDP": "6042.29", "projects": "16"},
-        {"states_uts": "Arunachal Pradesh", "AgricultureSector": "60.2349", "GDP": "185.09", "projects": "1"},
-        {"states_uts": "Assam", "AgricultureSector": "425.8146", "GDP": "2279.59", "projects": "11"},
-        {"states_uts": "Bihar", "AgricultureSector": "824.8625", "GDP": "3716.02", "projects": "15"},
-        {"states_uts": "Chhattisgarh", "AgricultureSector": "411.5278", "GDP": "2273.83", "projects": "7"},
-        {"states_uts": "Goa", "AgricultureSector": "23.0043", "GDP": "550.54", "projects": "1"},
-        {"states_uts": "Gujarat", "AgricultureSector": "1507.9057", "GDP": "10290.10", "projects": "27"},
-        {"states_uts": "Haryana", "AgricultureSector": "808.1831", "GDP": "4952.49", "projects": "2"},
-        {"states_uts": "Himachal Pradesh", "AgricultureSector": "191.4882", "GDP": "1142.39", "projects": "36"},
-        {"states_uts": "Jammu & Kashmir", "AgricultureSector": "185.5851", "GDP": "1171.68", "projects": "2"},
-        {"states_uts": "Jharkhand", "AgricultureSector": "299.7585", "GDP": "2066.13", "projects": "10"},
-        {"states_uts": "Karnataka", "AgricultureSector": "937.0741", "GDP": "10451.68", "projects": "57"},
-        {"states_uts": "Kerala", "AgricultureSector": "521.8703", "GDP": "5619.94", "projects": "15"},
-        {"states_uts": "Madhya Pradesh", "AgricultureSector": "1540.6542", "GDP": "5411.89", "projects": "20"},
-        {"states_uts": "Maharashtra", "AgricultureSector": "1751.5724", "GDP": "19661.47", "projects": "102"},
-        {"states_uts": "Manipur", "AgricultureSector": "41.7052", "GDP": "195.31", "projects": "3"},
-        {"states_uts": "Meghalaya", "AgricultureSector": "39.3499", "GDP": "251.17", "projects": "2"},
-        {"states_uts": "Mizoram", "AgricultureSector": "40.4820", "GDP": "151.39", "projects": "2"},
-        {"states_uts": "Nagaland", "AgricultureSector": "48.0242", "GDP": "195.24", "projects": "2"},
-        {"states_uts": "Odisha", "AgricultureSector": "516.9092", "GDP": "3285.50", "projects": "5"},
-        {"states_uts": "Punjab", "AgricultureSector": "975.9027", "GDP": "3900.87", "projects": "13"},
-        {"states_uts": "Rajasthan", "AgricultureSector": "1866.8612", "GDP": "6814.85", "projects": "34"},
-        {"states_uts": "Sikkim", "AgricultureSector": "11.6426", "GDP": "180.34", "projects": "2"},
-        {"states_uts": "Tamil Nadu", "AgricultureSector": "1240.4932", "GDP": "11765.00", "projects": "53"},
-        {"states_uts": "Telangana", "AgricultureSector": "636.6387", "GDP": "5779.02", "projects": "11"},
-        {"states_uts": "Tripura", "AgricultureSector": "73.9076", "GDP": "359.38", "projects": "2"},
-        {"states_uts": "Uttar Pradesh", "AgricultureSector": "2657.0057", "GDP": "11372.10", "projects": "11"},
-        {"states_uts": "Uttarakhand", "AgricultureSector": "162.2398", "GDP": "1771.63", "projects": "16"},
-        {"states_uts": "West Bengal", "AgricultureSector": "1503.3150", "GDP": "7973.00", "projects": "10"}]}
-    data = js["records"]
+    rawData = commonFunctions.downloadData(serviceUrl)
+    js = commonFunctions.loadJson(rawData)
+    data = js['records']
+    #js = {"records": [
+    #    {"states_uts": "Andaman & Nicobar Islands", "AgricultureSector": "7.9731", "GDP": "60.32", "projects": "16"},
+    #    {"states_uts": "Andhra Pradesh", "AgricultureSector": "1353.9974", "GDP": "6042.29", "projects": "16"},
+    #    {"states_uts": "Arunachal Pradesh", "AgricultureSector": "60.2349", "GDP": "185.09", "projects": "1"},
+    #    {"states_uts": "Assam", "AgricultureSector": "425.8146", "GDP": "2279.59", "projects": "11"},
+    #    {"states_uts": "Bihar", "AgricultureSector": "824.8625", "GDP": "3716.02", "projects": "15"},
+    #    {"states_uts": "Chhattisgarh", "AgricultureSector": "411.5278", "GDP": "2273.83", "projects": "7"},
+    #    {"states_uts": "Goa", "AgricultureSector": "23.0043", "GDP": "550.54", "projects": "1"},
+    #    {"states_uts": "Gujarat", "AgricultureSector": "1507.9057", "GDP": "10290.10", "projects": "27"},
+    #    {"states_uts": "Haryana", "AgricultureSector": "808.1831", "GDP": "4952.49", "projects": "2"},
+    #    {"states_uts": "Himachal Pradesh", "AgricultureSector": "191.4882", "GDP": "1142.39", "projects": "36"},
+    #    {"states_uts": "Jammu & Kashmir", "AgricultureSector": "185.5851", "GDP": "1171.68", "projects": "2"},
+    #    {"states_uts": "Jharkhand", "AgricultureSector": "299.7585", "GDP": "2066.13", "projects": "10"},
+    #    {"states_uts": "Karnataka", "AgricultureSector": "937.0741", "GDP": "10451.68", "projects": "57"},
+    #    {"states_uts": "Kerala", "AgricultureSector": "521.8703", "GDP": "5619.94", "projects": "15"},
+    #    {"states_uts": "Madhya Pradesh", "AgricultureSector": "1540.6542", "GDP": "5411.89", "projects": "20"},
+    #    {"states_uts": "Maharashtra", "AgricultureSector": "1751.5724", "GDP": "19661.47", "projects": "102"},
+    #    {"states_uts": "Manipur", "AgricultureSector": "41.7052", "GDP": "195.31", "projects": "3"},
+    #    {"states_uts": "Meghalaya", "AgricultureSector": "39.3499", "GDP": "251.17", "projects": "2"},
+    #    {"states_uts": "Mizoram", "AgricultureSector": "40.4820", "GDP": "151.39", "projects": "2"},
+    #    {"states_uts": "Nagaland", "AgricultureSector": "48.0242", "GDP": "195.24", "projects": "2"},
+    #    {"states_uts": "Odisha", "AgricultureSector": "516.9092", "GDP": "3285.50", "projects": "5"},
+    #    {"states_uts": "Punjab", "AgricultureSector": "975.9027", "GDP": "3900.87", "projects": "13"},
+    #    {"states_uts": "Rajasthan", "AgricultureSector": "1866.8612", "GDP": "6814.85", "projects": "34"},
+    #    {"states_uts": "Sikkim", "AgricultureSector": "11.6426", "GDP": "180.34", "projects": "2"},
+    #    {"states_uts": "Tamil Nadu", "AgricultureSector": "1240.4932", "GDP": "11765.00", "projects": "53"},
+    #    {"states_uts": "Telangana", "AgricultureSector": "636.6387", "GDP": "5779.02", "projects": "11"},
+    #    {"states_uts": "Tripura", "AgricultureSector": "73.9076", "GDP": "359.38", "projects": "2"},
+    #    {"states_uts": "Uttar Pradesh", "AgricultureSector": "2657.0057", "GDP": "11372.10", "projects": "11"},
+    #    {"states_uts": "Uttarakhand", "AgricultureSector": "162.2398", "GDP": "1771.63", "projects": "16"},
+    #    {"states_uts": "West Bengal", "AgricultureSector": "1503.3150", "GDP": "7973.00", "projects": "10"}]}
+    #data = js["records"]
 
     # *****************************Chloropleth Map*****************************#
     mapConfig = OrderedDict()
