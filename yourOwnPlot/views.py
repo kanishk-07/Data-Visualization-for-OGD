@@ -9,7 +9,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-serviceUrl = 'https://api.data.gov.in/resource/4256d3dd-5e4a-4e0b-9d35-17fd1bdc83f7?api-key=<< place api key here >>&format=json&offset=0&limit=100'
+# serviceUrl = 'https://api.data.gov.in/resource/4256d3dd-5e4a-4e0b-9d35-17fd1bdc83f7?api-key=<< place api key here >>&format=json&offset=0&limit=100'
 def yourOwnPlot(request):
     if request.method == "POST":
         str1 = request.POST.get('handle')
