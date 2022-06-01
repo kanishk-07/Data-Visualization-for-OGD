@@ -3,44 +3,44 @@ from collections import OrderedDict
 from fusioncharts import FusionCharts
 import commonFunctions
 
-serviceUrl = ''
+serviceUrl = 'https://api.data.gov.in/resource/2d42e554-23d1-4fb9-9f23-48a54c0d4ba6?api-key=<< api key >>&format=json'
 
 def crimeandliteracy(request):
-    #rawData = commonFunctions.downloadData(serviceUrl)
-    #js = commonFunctions.loadJson(rawData)
-    #data = js['records']
-    js = {"records": [
-        {"states_uts": "Andaman & Nicobar Islands", "crimeRates": "452.9", "literacyRates": "86.27", "projects": "16"},
-        {"states_uts": "Andhra Pradesh", "crimeRates": "250.1", "literacyRates": "67.35", "projects": "16"},
-        {"states_uts": "Arunachal Pradesh", "crimeRates": "204.5", "literacyRates": "66.95", "projects": "1"},
-        {"states_uts": "Assam", "crimeRates": "328.5", "literacyRates": "73.18", "projects": "11"},
-        {"states_uts": "Bihar", "crimeRates": "181.9", "literacyRates": "63.82", "projects": "15"},
-        {"states_uts": "Chhattisgarh", "crimeRates": "323.9", "literacyRates": "71.04", "projects": "7"},
-        {"states_uts": "Goa", "crimeRates": "186.2", "literacyRates": "87.40", "projects": "1"},
-        {"states_uts": "Gujarat", "crimeRates": "690.3", "literacyRates": "79.31", "projects": "27"},
-        {"states_uts": "Haryana", "crimeRates": "518.3", "literacyRates": "76.64", "projects": "2"},
-        {"states_uts": "Himachal Pradesh", "crimeRates": "242.3", "literacyRates": "83.78", "projects": "36"},
-        {"states_uts": "Jammu & Kashmir", "crimeRates": "213.7", "literacyRates": "68.74", "projects": "2"},
-        {"states_uts": "Jharkhand", "crimeRates": "141.5", "literacyRates": "67.63", "projects": "10"},
-        {"states_uts": "Karnataka", "crimeRates": "286.8", "literacyRates": "75.60", "projects": "57"},
-        {"states_uts": "Kerala", "crimeRates": "893.4", "literacyRates": "93.91", "projects": "15"},
-        {"states_uts": "Madhya Pradesh", "crimeRates": "466.6", "literacyRates": "70.63", "projects": "20"},
-        {"states_uts": "Maharashtra", "crimeRates": "357.4", "literacyRates": "82.91", "projects": "102"},
-        {"states_uts": "Manipur", "crimeRates": "157.6", "literacyRates": "79.85", "projects": "3"},
-        {"states_uts": "Meghalaya", "crimeRates": "128.8", "literacyRates": "75.48", "projects": "2"},
-        {"states_uts": "Mizoram", "crimeRates": "261.7", "literacyRates": "91.58", "projects": "2"},
-        {"states_uts": "Nagaland", "crimeRates": "79.8", "literacyRates": "80.11", "projects": "2"},
-        {"states_uts": "Odisha", "crimeRates": "243.2", "literacyRates": "73.45", "projects": "5"},
-        {"states_uts": "Punjab", "crimeRates": "197.7", "literacyRates": "76.68", "projects": "13"},
-        {"states_uts": "Rajasthan", "crimeRates": "342.7", "literacyRates": "67.06", "projects": "34"},
-        {"states_uts": "Sikkim", "crimeRates": "156.9", "literacyRates": "82.20", "projects": "2"},
-        {"states_uts": "Tamil Nadu", "crimeRates": "672.3", "literacyRates": "80.33", "projects": "53"},
-        {"states_uts": "Telangana", "crimeRates": "326.4", "literacyRates": "66.5", "projects": "11"},
-        {"states_uts": "Tripura", "crimeRates": "106.3", "literacyRates": "87.75", "projects": "2"},
-        {"states_uts": "Uttar Pradesh", "crimeRates": "225.3", "literacyRates": "69.72", "projects": "11"},
-        {"states_uts": "Uttarakhand", "crimeRates": "150.5", "literacyRates": "79.63", "projects": "16"},
-        {"states_uts": "West Bengal", "crimeRates": "217.8", "literacyRates": "77.08", "projects": "10"}]}
-    data = js["records"]
+    rawData = commonFunctions.downloadData(serviceUrl)
+    js = commonFunctions.loadJson(rawData)
+    data = js['records']
+    #js = {"records": [
+    #    {"states_uts": "Andaman & Nicobar Islands", "crimeRates": "452.9", "literacyRates": "86.27", "projects": "16"},
+    #    {"states_uts": "Andhra Pradesh", "crimeRates": "250.1", "literacyRates": "67.35", "projects": "16"},
+    #    {"states_uts": "Arunachal Pradesh", "crimeRates": "204.5", "literacyRates": "66.95", "projects": "1"},
+    #    {"states_uts": "Assam", "crimeRates": "328.5", "literacyRates": "73.18", "projects": "11"},
+    #    {"states_uts": "Bihar", "crimeRates": "181.9", "literacyRates": "63.82", "projects": "15"},
+    #    {"states_uts": "Chhattisgarh", "crimeRates": "323.9", "literacyRates": "71.04", "projects": "7"},
+    #    {"states_uts": "Goa", "crimeRates": "186.2", "literacyRates": "87.40", "projects": "1"},
+    #    {"states_uts": "Gujarat", "crimeRates": "690.3", "literacyRates": "79.31", "projects": "27"},
+    #    {"states_uts": "Haryana", "crimeRates": "518.3", "literacyRates": "76.64", "projects": "2"},
+    #    {"states_uts": "Himachal Pradesh", "crimeRates": "242.3", "literacyRates": "83.78", "projects": "36"},
+    #    {"states_uts": "Jammu & Kashmir", "crimeRates": "213.7", "literacyRates": "68.74", "projects": "2"},
+    #    {"states_uts": "Jharkhand", "crimeRates": "141.5", "literacyRates": "67.63", "projects": "10"},
+    #    {"states_uts": "Karnataka", "crimeRates": "286.8", "literacyRates": "75.60", "projects": "57"},
+    #    {"states_uts": "Kerala", "crimeRates": "893.4", "literacyRates": "93.91", "projects": "15"},
+    #    {"states_uts": "Madhya Pradesh", "crimeRates": "466.6", "literacyRates": "70.63", "projects": "20"},
+    #    {"states_uts": "Maharashtra", "crimeRates": "357.4", "literacyRates": "82.91", "projects": "102"},
+    #    {"states_uts": "Manipur", "crimeRates": "157.6", "literacyRates": "79.85", "projects": "3"},
+    #    {"states_uts": "Meghalaya", "crimeRates": "128.8", "literacyRates": "75.48", "projects": "2"},
+    #    {"states_uts": "Mizoram", "crimeRates": "261.7", "literacyRates": "91.58", "projects": "2"},
+    #    {"states_uts": "Nagaland", "crimeRates": "79.8", "literacyRates": "80.11", "projects": "2"},
+    #    {"states_uts": "Odisha", "crimeRates": "243.2", "literacyRates": "73.45", "projects": "5"},
+    #    {"states_uts": "Punjab", "crimeRates": "197.7", "literacyRates": "76.68", "projects": "13"},
+    #    {"states_uts": "Rajasthan", "crimeRates": "342.7", "literacyRates": "67.06", "projects": "34"},
+    #    {"states_uts": "Sikkim", "crimeRates": "156.9", "literacyRates": "82.20", "projects": "2"},
+    #    {"states_uts": "Tamil Nadu", "crimeRates": "672.3", "literacyRates": "80.33", "projects": "53"},
+    #    {"states_uts": "Telangana", "crimeRates": "326.4", "literacyRates": "66.5", "projects": "11"},
+    #    {"states_uts": "Tripura", "crimeRates": "106.3", "literacyRates": "87.75", "projects": "2"},
+    #    {"states_uts": "Uttar Pradesh", "crimeRates": "225.3", "literacyRates": "69.72", "projects": "11"},
+    #    {"states_uts": "Uttarakhand", "crimeRates": "150.5", "literacyRates": "79.63", "projects": "16"},
+    #    {"states_uts": "West Bengal", "crimeRates": "217.8", "literacyRates": "77.08", "projects": "10"}]}
+    #data = js["records"]
 
     # *****************************Chloropleth Map*****************************#
     mapConfig = OrderedDict()
