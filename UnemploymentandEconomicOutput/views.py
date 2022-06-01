@@ -3,44 +3,44 @@ from collections import OrderedDict
 from fusioncharts import FusionCharts
 import commonFunctions
 
-serviceUrl = ''
+serviceUrl = 'https://api.data.gov.in/resource/023681b2-24e1-41e1-a34b-8f6bfaa29b94?api-key=<< place api key here >>&format=json'
 
 def UnemploymentandEconomicOutput(request):
-    #rawData = commonFunctions.downloadData(serviceUrl)
-    #js = commonFunctions.loadJson(rawData)
-    #data = js['records']
-    js = {"records": [
-        {"states_uts": "Andaman & Nicobar Islands", "UnemploymentRates": "15.8", "EconomicOutput": "20.71", "projects": "16"},
-        {"states_uts": "Andhra Pradesh", "UnemploymentRates": "4.5", "EconomicOutput": "16.31", "projects": "16"},
-        {"states_uts": "Arunachal Pradesh", "UnemploymentRates": "5.9", "EconomicOutput": "15.94", "projects": "1"},
-        {"states_uts": "Assam", "UnemploymentRates": "8.1", "EconomicOutput": "9.25", "projects": "11"},
-        {"states_uts": "Bihar", "UnemploymentRates": "7.2", "EconomicOutput": "4.66", "projects": "15"},
-        {"states_uts": "Chhattisgarh", "UnemploymentRates": "3.3", "EconomicOutput": "11.12", "projects": "7"},
-        {"states_uts": "Goa", "UnemploymentRates": "13.9", "EconomicOutput": "48.35", "projects": "1"},
-        {"states_uts": "Gujarat", "UnemploymentRates": "4.8", "EconomicOutput": "21.7", "projects": "27"},
-        {"states_uts": "Haryana", "UnemploymentRates": "8.6", "EconomicOutput": "24.69", "projects": "2"},
-        {"states_uts": "Himachal Pradesh", "UnemploymentRates": "5.5", "EconomicOutput": "20.5", "projects": "36"},
-        {"states_uts": "Jammu & Kashmir", "UnemploymentRates": "5.3", "EconomicOutput": "11.00", "projects": "2"},
-        {"states_uts": "Jharkhand", "UnemploymentRates": "7.7", "EconomicOutput": "8.37", "projects": "10"},
-        {"states_uts": "Karnataka", "UnemploymentRates": "4.8", "EconomicOutput": "22.08", "projects": "57"},
-        {"states_uts": "Kerala", "UnemploymentRates": "11.4", "EconomicOutput": "20.9", "projects": "15"},
-        {"states_uts": "Madhya Pradesh", "UnemploymentRates": "4.5", "EconomicOutput": "10.03", "projects": "20"},
-        {"states_uts": "Maharashtra", "UnemploymentRates": "4.9", "EconomicOutput": "21.4", "projects": "102"},
-        {"states_uts": "Manipur", "UnemploymentRates": "11.6", "EconomicOutput": "8.8", "projects": "3"},
-        {"states_uts": "Meghalaya", "UnemploymentRates": "1.5", "EconomicOutput": "10.3", "projects": "2"},
-        {"states_uts": "Mizoram", "UnemploymentRates": "10.1", "EconomicOutput": "17.8", "projects": "2"},
-        {"states_uts": "Nagaland", "UnemploymentRates": "21.4", "EconomicOutput": "12.2", "projects": "2"},
-        {"states_uts": "Odisha", "UnemploymentRates": "7.1", "EconomicOutput": "10.4", "projects": "5"},
-        {"states_uts": "Punjab", "UnemploymentRates": "7.8", "EconomicOutput": "17.2", "projects": "13"},
-        {"states_uts": "Rajasthan", "UnemploymentRates": "5.0", "EconomicOutput": "12.17", "projects": "34"},
-        {"states_uts": "Sikkim", "UnemploymentRates": "3.5", "EconomicOutput": "38.6", "projects": "2"},
-        {"states_uts": "Tamil Nadu", "UnemploymentRates": "7.6", "EconomicOutput": "20.2", "projects": "53"},
-        {"states_uts": "Telangana", "UnemploymentRates": "7.6", "EconomicOutput": "19.01", "projects": "11"},
-        {"states_uts": "Tripura", "UnemploymentRates": "6.8", "EconomicOutput": "12.5", "projects": "2"},
-        {"states_uts": "Uttar Pradesh", "UnemploymentRates": "6.4", "EconomicOutput": "6.8", "projects": "11"},
-        {"states_uts": "Uttarakhand", "UnemploymentRates": "7.6", "EconomicOutput": "22.02", "projects": "16"},
-        {"states_uts": "West Bengal", "UnemploymentRates": "4.6", "EconomicOutput": "10.9", "projects": "10"}]}
-    data = js["records"]
+    rawData = commonFunctions.downloadData(serviceUrl)
+    js = commonFunctions.loadJson(rawData)
+    data = js['records']
+    #js = {"records": [
+    #    {"states_uts": "Andaman & Nicobar Islands", "UnemploymentRates": "15.8", "EconomicOutput": "20.71", "projects": "16"},
+    #    {"states_uts": "Andhra Pradesh", "UnemploymentRates": "4.5", "EconomicOutput": "16.31", "projects": "16"},
+    #    {"states_uts": "Arunachal Pradesh", "UnemploymentRates": "5.9", "EconomicOutput": "15.94", "projects": "1"},
+    #    {"states_uts": "Assam", "UnemploymentRates": "8.1", "EconomicOutput": "9.25", "projects": "11"},
+    #   {"states_uts": "Bihar", "UnemploymentRates": "7.2", "EconomicOutput": "4.66", "projects": "15"},
+    #    {"states_uts": "Chhattisgarh", "UnemploymentRates": "3.3", "EconomicOutput": "11.12", "projects": "7"},
+    #    {"states_uts": "Goa", "UnemploymentRates": "13.9", "EconomicOutput": "48.35", "projects": "1"},
+    #    {"states_uts": "Gujarat", "UnemploymentRates": "4.8", "EconomicOutput": "21.7", "projects": "27"},
+    #    {"states_uts": "Haryana", "UnemploymentRates": "8.6", "EconomicOutput": "24.69", "projects": "2"},
+    #    {"states_uts": "Himachal Pradesh", "UnemploymentRates": "5.5", "EconomicOutput": "20.5", "projects": "36"},
+    #    {"states_uts": "Jammu & Kashmir", "UnemploymentRates": "5.3", "EconomicOutput": "11.00", "projects": "2"},
+    #    {"states_uts": "Jharkhand", "UnemploymentRates": "7.7", "EconomicOutput": "8.37", "projects": "10"},
+    #    {"states_uts": "Karnataka", "UnemploymentRates": "4.8", "EconomicOutput": "22.08", "projects": "57"},
+    #    {"states_uts": "Kerala", "UnemploymentRates": "11.4", "EconomicOutput": "20.9", "projects": "15"},
+    #    {"states_uts": "Madhya Pradesh", "UnemploymentRates": "4.5", "EconomicOutput": "10.03", "projects": "20"},
+    #    {"states_uts": "Maharashtra", "UnemploymentRates": "4.9", "EconomicOutput": "21.4", "projects": "102"},
+    #    {"states_uts": "Manipur", "UnemploymentRates": "11.6", "EconomicOutput": "8.8", "projects": "3"},
+    #    {"states_uts": "Meghalaya", "UnemploymentRates": "1.5", "EconomicOutput": "10.3", "projects": "2"},
+    #    {"states_uts": "Mizoram", "UnemploymentRates": "10.1", "EconomicOutput": "17.8", "projects": "2"},
+    #    {"states_uts": "Nagaland", "UnemploymentRates": "21.4", "EconomicOutput": "12.2", "projects": "2"},
+    #    {"states_uts": "Odisha", "UnemploymentRates": "7.1", "EconomicOutput": "10.4", "projects": "5"},
+    #    {"states_uts": "Punjab", "UnemploymentRates": "7.8", "EconomicOutput": "17.2", "projects": "13"},
+    #    {"states_uts": "Rajasthan", "UnemploymentRates": "5.0", "EconomicOutput": "12.17", "projects": "34"},
+    #    {"states_uts": "Sikkim", "UnemploymentRates": "3.5", "EconomicOutput": "38.6", "projects": "2"},
+    #    {"states_uts": "Tamil Nadu", "UnemploymentRates": "7.6", "EconomicOutput": "20.2", "projects": "53"},
+    #   {"states_uts": "Telangana", "UnemploymentRates": "7.6", "EconomicOutput": "19.01", "projects": "11"},
+    #    {"states_uts": "Tripura", "UnemploymentRates": "6.8", "EconomicOutput": "12.5", "projects": "2"},
+    #    {"states_uts": "Uttar Pradesh", "UnemploymentRates": "6.4", "EconomicOutput": "6.8", "projects": "11"},
+    #    {"states_uts": "Uttarakhand", "UnemploymentRates": "7.6", "EconomicOutput": "22.02", "projects": "16"},
+    #    {"states_uts": "West Bengal", "UnemploymentRates": "4.6", "EconomicOutput": "10.9", "projects": "10"}]}
+    #data = js["records"]
 
     # *****************************Chloropleth Map*****************************#
     mapConfig = OrderedDict()
