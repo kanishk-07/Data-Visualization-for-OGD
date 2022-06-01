@@ -3,43 +3,43 @@ from collections import OrderedDict
 from fusioncharts import FusionCharts
 import commonFunctions
 
-serviceUrl = ''
+serviceUrl = 'https://api.data.gov.in/resource/9fcce189-8a67-485f-8c86-a12b6e64882d?api-key=<< place your api key >>&format=json'
 
 def PollutionAndVehicles(request):
-    #rawData = commonFunctions.downloadData(serviceUrl)
-    #js = commonFunctions.loadJson(rawData)
-    #data = js['records']
-    js = {"records": [
-        {"states_uts": "Andaman & Nicobar Islands", "Vehicles": "69", "Pollution": "2", "projects": "16"},
-        {"states_uts": "Andhra Pradesh", "Vehicles": "10189", "Pollution": "19", "projects": "16"},
-        {"states_uts": "Arunachal Pradesh", "Vehicles": "145", "Pollution": "4", "projects": "1"},
-        {"states_uts": "Assam", "Vehicles": "1582", "Pollution": "14", "projects": "11"},
-        {"states_uts": "Bihar", "Vehicles": "2673", "Pollution": "47", "projects": "15"},
-        {"states_uts": "Chhattisgarh", "Vehicles": "2766", "Pollution": "27", "projects": "7"},
-        {"states_uts": "Goa", "Vehicles": "790", "Pollution": "18", "projects": "1"},
-        {"states_uts": "Gujarat", "Vehicles": "12993", "Pollution": "25", "projects": "27"},
-        {"states_uts": "Haryana", "Vehicles": "5377", "Pollution": "25", "projects": "2"},
-        {"states_uts": "Himachal Pradesh", "Vehicles": "622", "Pollution": "12", "projects": "36"},
-        {"states_uts": "Jammu & Kashmir", "Vehicles": "927", "Pollution": "12", "projects": "2"},
-        {"states_uts": "Jharkhand", "Vehicles": "3113", "Pollution": "39", "projects": "10"},
-        {"states_uts": "Karnataka", "Vehicles": "9930", "Pollution": "21", "projects": "57"},
-        {"states_uts": "Kerala", "Vehicles": "6072", "Pollution": "14", "projects": "15"},
-        {"states_uts": "Madhya Pradesh", "Vehicles": "7356", "Pollution": "18", "projects": "20"},
-        {"states_uts": "Maharashtra", "Vehicles": "17434", "Pollution": "33", "projects": "102"},
-        {"states_uts": "Manipur", "Vehicles": "207", "Pollution": "5", "projects": "3"},
-        {"states_uts": "Meghalaya", "Vehicles": "176", "Pollution": "10", "projects": "2"},
-        {"states_uts": "Mizoram", "Vehicles": "93", "Pollution": "4", "projects": "2"},
-        {"states_uts": "Nagaland", "Vehicles": "273", "Pollution": "6", "projects": "2"},
-        {"states_uts": "Odisha", "Vehicles": "3338", "Pollution": "19", "projects": "5"},
-        {"states_uts": "Punjab", "Vehicles": "5274", "Pollution": "26", "projects": "13"},
-        {"states_uts": "Rajasthan", "Vehicles": "7986", "Pollution": "31", "projects": "34"},
-        {"states_uts": "Sikkim", "Vehicles": "39", "Pollution": "1", "projects": "2"},
-        {"states_uts": "Tamil Nadu", "Vehicles": "15638", "Pollution": "22", "projects": "53"},
-        {"states_uts": "Tripura", "Vehicles": "188", "Pollution": "4.5", "projects": "2"},
-        {"states_uts": "Uttar Pradesh", "Vehicles": "13287", "Pollution": "30", "projects": "11"},
-        {"states_uts": "Uttarakhand", "Vehicles": "997", "Pollution": "24", "projects": "16"},
-        {"states_uts": "West Bengal", "Vehicles": "3261", "Pollution": "57", "projects": "10"}]}
-    data = js["records"]
+    rawData = commonFunctions.downloadData(serviceUrl)
+    js = commonFunctions.loadJson(rawData)
+    data = js['records']
+    #js = {"records": [
+    #    {"states_uts": "Andaman & Nicobar Islands", "Vehicles": "69", "Pollution": "2", "projects": "16"},
+    #    {"states_uts": "Andhra Pradesh", "Vehicles": "10189", "Pollution": "19", "projects": "16"},
+    #    {"states_uts": "Arunachal Pradesh", "Vehicles": "145", "Pollution": "4", "projects": "1"},
+    #    {"states_uts": "Assam", "Vehicles": "1582", "Pollution": "14", "projects": "11"},
+    #    {"states_uts": "Bihar", "Vehicles": "2673", "Pollution": "47", "projects": "15"},
+    #    {"states_uts": "Chhattisgarh", "Vehicles": "2766", "Pollution": "27", "projects": "7"},
+    #    {"states_uts": "Goa", "Vehicles": "790", "Pollution": "18", "projects": "1"},
+    #    {"states_uts": "Gujarat", "Vehicles": "12993", "Pollution": "25", "projects": "27"},
+    #    {"states_uts": "Haryana", "Vehicles": "5377", "Pollution": "25", "projects": "2"},
+    #    {"states_uts": "Himachal Pradesh", "Vehicles": "622", "Pollution": "12", "projects": "36"},
+    #    {"states_uts": "Jammu & Kashmir", "Vehicles": "927", "Pollution": "12", "projects": "2"},
+    #    {"states_uts": "Jharkhand", "Vehicles": "3113", "Pollution": "39", "projects": "10"},
+    #    {"states_uts": "Karnataka", "Vehicles": "9930", "Pollution": "21", "projects": "57"},
+    #    {"states_uts": "Kerala", "Vehicles": "6072", "Pollution": "14", "projects": "15"},
+    #    {"states_uts": "Madhya Pradesh", "Vehicles": "7356", "Pollution": "18", "projects": "20"},
+    #    {"states_uts": "Maharashtra", "Vehicles": "17434", "Pollution": "33", "projects": "102"},
+    #    {"states_uts": "Manipur", "Vehicles": "207", "Pollution": "5", "projects": "3"},
+    #    {"states_uts": "Meghalaya", "Vehicles": "176", "Pollution": "10", "projects": "2"},
+    #    {"states_uts": "Mizoram", "Vehicles": "93", "Pollution": "4", "projects": "2"},
+    #    {"states_uts": "Nagaland", "Vehicles": "273", "Pollution": "6", "projects": "2"},
+    #    {"states_uts": "Odisha", "Vehicles": "3338", "Pollution": "19", "projects": "5"},
+    #    {"states_uts": "Punjab", "Vehicles": "5274", "Pollution": "26", "projects": "13"},
+    #    {"states_uts": "Rajasthan", "Vehicles": "7986", "Pollution": "31", "projects": "34"},
+    #    {"states_uts": "Sikkim", "Vehicles": "39", "Pollution": "1", "projects": "2"},
+    #    {"states_uts": "Tamil Nadu", "Vehicles": "15638", "Pollution": "22", "projects": "53"},
+    #    {"states_uts": "Tripura", "Vehicles": "188", "Pollution": "4.5", "projects": "2"},
+    #    {"states_uts": "Uttar Pradesh", "Vehicles": "13287", "Pollution": "30", "projects": "11"},
+    #    {"states_uts": "Uttarakhand", "Vehicles": "997", "Pollution": "24", "projects": "16"},
+    #    {"states_uts": "West Bengal", "Vehicles": "3261", "Pollution": "57", "projects": "10"}]}
+    #data = js["records"]
 
     # *****************************Chloropleth Map*****************************#
     mapConfig = OrderedDict()
