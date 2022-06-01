@@ -3,7 +3,7 @@ from collections import OrderedDict
 from fusioncharts import FusionCharts
 import commonFunctions
 
-serviceUrl = '''https://api.data.gov.in/resource/1ee05646-e255-49fb-a6f2-5b4ce69b0aec?api-key=579b464db66ec23bdd000001c8e6c9d6daf34e65556dabe447fd0c35&format=json&offset=0&limit=100'''
+serviceUrl = '''https://api.data.gov.in/resource/1ee05646-e255-49fb-a6f2-5b4ce69b0aec?api-key=<< add api key here, remove spaces >>&format=json&offset=0&limit=100'''
 #http://www.jsonmate.com/permalink/5cd5701185da04b10bcf81b6
 
 def budgetAllocationPolice(request):
